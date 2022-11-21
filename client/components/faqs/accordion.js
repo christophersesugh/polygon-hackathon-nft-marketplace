@@ -2,7 +2,7 @@ import React from "react";
 import { BiMinus } from "react-icons/bi";
 import { BsPlus } from "react-icons/bs";
 
-export default function Accordion({ question }) {
+export default function Accordion({ question, index }) {
   const [isOpen, setIsOpen] = React.useState(false);
   const handleIsOpen = () => {
     setIsOpen(!isOpen);
@@ -16,7 +16,12 @@ export default function Accordion({ question }) {
         } rounded-md cursor-pointer transition-all duration-300`}
         type="button"
       >
-        <h2>{question.title}</h2>
+        <h2>
+          <span className={`${isOpen ? "text-slate-200" : "text-blue-600 "}`}>
+            {index + 1}.
+          </span>{" "}
+          {question.title}
+        </h2>
         {isOpen ? <BiMinus className="text-xl" /> : <BsPlus />}
       </button>
       {isOpen && (

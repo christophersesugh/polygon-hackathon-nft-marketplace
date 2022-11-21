@@ -7,17 +7,17 @@ import headerImg4 from "/public/assets/logos/bitcoin.png";
 
 export default function Header() {
   return (
-    <header className="bg-[url('/assets/logos/hero-shape.svg')] bg-contain bg-no-repeat bg-center bg-indigo-900 bg-origin-content h-auto">
+    <header className="bg-[url('/assets/logos/hero.jpeg')] bg-cover bg-no-repeat bg-center bg-indigo-900 bg-origin-content h-screen">
       <div className="flex flex-col md:flex-row items-center justify-between p-12 pt-12">
-        <div className="flex items-center justify-center flex-col p-20">
+        <div className="flex  justify-center flex-col p-20">
           <p>Full NFT and Crypto collectibles Marketplace.</p>
-          <h2 className="text-3xl my-8 font-[10rem]">
-            Mint, List, Sell or Buy NFTs.
+          <h2 className="text-[2rem] my-8 font-[10rem]">
+            Mint, List, Sell and, Buy NFTs.
           </h2>
           <p>Your trusted NFT Marketplace.</p>
           <button
             type="button"
-            className="bg-blue-500 p-4 rounded-3xl text-lg mt-8"
+            className="bg-blue-500 p-4 rounded-3xl text-lg mt-8 self-start animate-pulse duration-300"
           >
             Mint and List
           </button>

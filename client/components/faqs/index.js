@@ -12,7 +12,7 @@ export default function FAQS() {
       />
       <div className="columns-1 gap-8 md:columns-2 mx-14 sm:mx-8 md:mx-8 ">
         {questions.map((question, index) => (
-          <Accordion question={question} key={index} />
+          <Accordion question={question} key={index} index={index} />
         ))}
       </div>
     </section>
@@ -20,8 +20,29 @@ export default function FAQS() {
 }
 
 const questions = [
-  { title: "some", body: "thing" },
-  { title: "some", body: "thing" },
-  { title: "some", body: "thing" },
-  { title: "some", body: "thing" },
+  { title: "How can I mint NFTs?", body: "thing" },
+  { title: "How can I list NFTs?", body: "thing" },
+  { title: "How can I buy NFTs?", body: "thing" },
+  { title: "How can I withdraw my proceeds (funds)?", body: "thing" },
+  { title: "What Crypto wallets are supported?", body: "thing" },
+  {
+    title: "Do I need a Crypto account to Mint, List, and Sell NFTs?",
+    body: "thing",
+  },
+  {
+    title: "How can I cancel my listed NFTs?",
+    body: "thing",
+  },
+  {
+    title: "How can I update my listed NFTs?",
+    body: "thing",
+  },
+  {
+    title: "How can I connect my Crypto wallet?",
+    body: "thing",
+  },
+  {
+    title: "What Crypto currencies can I use to purchase NFTs?",
+    body: "thing",
+  },
 ];

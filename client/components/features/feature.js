@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Feature({ feature }) {
   return (
-    <div className="rounded-md bg-white flex flex-col justify-center items-center p-8 drop-shadow-lg w-full">
+    <div className="rounded-md bg-white flex flex-col justify-center items-center p-8 drop-shadow-lg w-full hover:outline hover:outline-blue-500 focus:outline focus:outline-blue-500 transition-hover">
       <div>
         <Image
           src={feature.image}
