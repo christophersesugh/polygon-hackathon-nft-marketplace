@@ -24,17 +24,17 @@ export default function Features() {
 
 const features = [
   {
-    image: "/assets/logos/feature-icon-1.png",
+    image: "/feature-icon-1.png",
     title: "Instant transactions",
     body: "We provide up to 99% network uptime to enable fast and instant transactions.",
   },
   {
-    image: "/assets/logos/feature-icon-2.png",
+    image: "/feature-icon-2.png",
     title: "Safe & Secure",
     body: "All your activities on this platform are safe and secured, including transactions.",
   },
   {
-    image: "/assets/logos/nft-coin.png",
+    image: "/nft-coin.png",
     title: "NFT Minting",
     body: "Mint, list, and sell or buy your NFTs at ease.",
   },

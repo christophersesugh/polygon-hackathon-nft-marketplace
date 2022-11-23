@@ -14,7 +14,7 @@ export default function About() {
         <Slide left>
           <div className="pl-10 flex items-center justify-center">
             <Image
-              src="/assets/logos/about-image.png"
+              src="/about-image.png"
               width={400}
               height={400}
               className="w-[70%] hidden lg:block"

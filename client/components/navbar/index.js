@@ -17,17 +17,22 @@ export default function Navbar() {
 export const links = [
   {
     icon: <MdOutlineSell />,
-    name: "sell NFTs",
+    name: "Marketplace",
     link: "/market",
+  },
+  {
+    icon: <MdOutlineSell />,
+    name: "sell NFTs",
+    link: "/sell-nfts",
   },
   {
     icon: <FaBookmark />,
     name: "about",
     link: "/#about",
   },
-  {
-    icon: <MdOutlineFeaturedPlayList />,
-    name: "features",
-    link: "/#features",
-  },
+  // {
+  //   icon: <MdOutlineFeaturedPlayList />,
+  //   name: "features",
+  //   link: "/#features",
+  // },
 ];
