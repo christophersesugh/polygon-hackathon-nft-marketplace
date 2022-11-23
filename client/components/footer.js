@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Fade from "react-reveal/Fade";
-import logo from "/assets/logos/nft-core-white.png";
 
 export default function Footer() {
   const date = new Date().getFullYear();
@@ -12,7 +11,7 @@ export default function Footer() {
         <div className="grid g sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-16 pb-8 items-start">
           <div className="p-4 -mt-24">
             <Image
-              src={logo}
+              src="/assets/logos/nft-core-white.png"
               width={250}
               height={350}
               alt="Logo"

@@ -1,9 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import headerImg from "/assets/logos/header.png";
-import headerImg2 from "/assets/logos/nft-coin.png";
-import headerImg3 from "/assets/logos/ethereum.png";
 import Slide from "react-reveal/Slide";
 import Fade from "react-reveal/Fade";
 
@@ -34,16 +31,16 @@ export default function Header() {
         </Slide>
         <Slide right>
           <div className="hidden md:block relative h-full flex items-center mr-20">
-            <Image src={headerImg} alt="hero" className="z-2" />
+            <Image src="/assets/logos/header.png" alt="hero" className="z-2" />
             <Image
-              src={headerImg3}
+              src="/assets/logos/ethereum.png"
               width={100}
               height={100}
               alt="Ethereum"
               className="absolute animate-bounce right-0 bottom-[40%]"
             />
             <Image
-              src={headerImg2}
+              src="/assets/logos/nft-coin.png"
               width={150}
               height={150}
               alt="NFT"
