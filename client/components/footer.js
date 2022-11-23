@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Fade from "react-reveal/Fade";
-import logo from "/public/assets/logos/nft-core-white.png";
+import logo from "/assets/logos/nft-core-white.png";
 
 export default function Footer() {
   const date = new Date().getFullYear();

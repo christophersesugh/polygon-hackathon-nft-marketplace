@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import headerImg from "/public/assets/logos/header.png";
-import headerImg2 from "/public/assets/logos/nft-coin.png";
-import headerImg3 from "/public/assets/logos/ethereum.png";
+import headerImg from "/assets/logos/header.png";
+import headerImg2 from "/assets/logos/nft-coin.png";
+import headerImg3 from "/assets/logos/ethereum.png";
 import Slide from "react-reveal/Slide";
 import Fade from "react-reveal/Fade";
 
