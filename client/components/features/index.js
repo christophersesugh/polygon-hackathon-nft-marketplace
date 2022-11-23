@@ -7,7 +7,10 @@ import image3 from "/public/assets/logos/nft-coin.png";
 
 export default function Features() {
   return (
-    <section className="bg-slate-50 flex flex-col items-center justify-center py-12 lg:pb-[6rem]  px-8 h-auto">
+    <section
+      id="features"
+      className="bg-slate-50 flex flex-col items-center justify-center py-12 lg:pb-[6rem]  px-8 h-auto"
+    >
       <SectionTitle
         title="Why Choose Us"
         subtitle="Our Features"
