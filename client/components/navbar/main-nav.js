@@ -44,7 +44,7 @@ export default function MainNav({ setOpenNav }) {
         </ul>
 
         <div className="text-bold capitalize">
-          <div className="hidden md:block rounded-3xl bg-slate-50 text-blue-700">
+          <div className="hidden md:block rounded-3xl bg-slate-50 text-blue-700 p-2">
             <ConnectButton moralisAuth={false} />
           </div>
 
