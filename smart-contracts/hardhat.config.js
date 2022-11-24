@@ -8,9 +8,10 @@ require("dotenv").config();
 
 const MUMBAI_TESTNET_RPC_URL = process.env.MUMBAI_TESTNET_RPC_URL;
 const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL;
-const PRIVATE_KEY = process.env.PRIVATE_KEY;
+const PRIVATE_KEY = process.env.PRIVATE_KEY || "";
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY;
-const POLYGONSCAN_API_KEY = process.env.POLYGONSCAN_API_KEY;
+const POLYGONSCAN_API_KEY =
+    process.env.POLYGONSCAN_API_KEY || "F834K3JEDGWK2ENNE92GFS1UJM3294W5P5";
 const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY;
 
 /** @type import('hardhat/config').HardhatUserConfig */
@@ -18,9 +19,9 @@ module.exports = {
     solidity: "0.8.17",
     defaultNetwork: "hardhat",
     networks: {
-        matic: {
+        polygon_mumbai: {
             url: MUMBAI_TESTNET_RPC_URL,
-            accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
+            accounts: PRIVATE_KEY !== undefined ? [`0x${PRIVATE_KEY}`] : [],
             chainId: 80001,
             saveDeployments: true
         },
@@ -39,7 +40,7 @@ module.exports = {
     },
     etherscan: {
         apiKey: {
-            polygon: POLYGONSCAN_API_KEY,
+            polygonMumbai: POLYGONSCAN_API_KEY,
             goerli: ETHERSCAN_API_KEY
         }
     },

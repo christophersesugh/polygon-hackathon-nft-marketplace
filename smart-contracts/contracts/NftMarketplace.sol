@@ -4,9 +4,6 @@ pragma solidity ^0.8.7;
 import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
-// Check out https://github.com/Fantom-foundation/Artion-Contracts/blob/5c90d2bc0401af6fb5abf35b860b762b31dfee02/contracts/FantomMarketplace.sol
-// For a full decentralized nft marketplace
-
 error PriceNotMet(address nftAddress, uint256 tokenId, uint256 price);
 error ItemNotForSale(address nftAddress, uint256 tokenId);
 error NotListed(address nftAddress, uint256 tokenId);
@@ -15,9 +12,6 @@ error NoProceeds();
 error NotOwner();
 error NotApprovedForMarketplace();
 error PriceMustBeAboveZero();
-
-// Error thrown for isNotOwner modifier
-// error IsNotOwner()
 
 contract NftMarketplace is ReentrancyGuard {
     struct Listing {
@@ -77,26 +71,10 @@ contract NftMarketplace is ReentrancyGuard {
         _;
     }
 
-    // IsNotOwner Modifier - Nft Owner can't buy his/her NFT
-    // Modifies buyItem function
-    // Owner should only list, cancel listing or update listing
-    /* modifier isNotOwner(
-        address nftAddress,
-        uint256 tokenId,
-        address spender
-    ) {
-        IERC721 nft = IERC721(nftAddress);
-        address owner = nft.ownerOf(tokenId);
-        if (spender == owner) {
-            revert IsNotOwner();
-        }
-        _;
-    } */
-
     /////////////////////
     // Main Functions //
     /////////////////////
-    /*
+    /**
      * @notice Method for listing NFT
      * @param nftAddress Address of NFT contract
      * @param tokenId Token ID of NFT
@@ -106,11 +84,7 @@ contract NftMarketplace is ReentrancyGuard {
         address nftAddress,
         uint256 tokenId,
         uint256 price
-    )
-        external
-        notListed(nftAddress, tokenId)
-        isOwner(nftAddress, tokenId, msg.sender)
-    {
+    ) external notListed(nftAddress, tokenId) isOwner(nftAddress, tokenId, msg.sender) {
         if (price <= 0) {
             revert PriceMustBeAboveZero();
         }
@@ -122,7 +96,7 @@ contract NftMarketplace is ReentrancyGuard {
         emit ItemListed(msg.sender, nftAddress, tokenId, price);
     }
 
-    /*
+    /**
      * @notice Method for cancelling listing
      * @param nftAddress Address of NFT contract
      * @param tokenId Token ID of NFT
@@ -136,7 +110,7 @@ contract NftMarketplace is ReentrancyGuard {
         emit ItemCanceled(msg.sender, nftAddress, tokenId);
     }
 
-    /*
+    /**
      * @notice Method for buying listing
      * @notice The owner of an NFT could unapprove the marketplace,
      * which would cause this function to fail
@@ -148,30 +122,19 @@ contract NftMarketplace is ReentrancyGuard {
         external
         payable
         isListed(nftAddress, tokenId)
-        // isNotOwner(nftAddress, tokenId, msg.sender)
         nonReentrant
     {
-        // Challenge - How would you refactor this contract to take:
-        // 1. Abitrary tokens as payment? (HINT - Chainlink Price Feeds!)
-        // 2. Be able to set prices in other currencies?
-        // 3. Tweet me @PatrickAlphaC if you come up with a solution!
         Listing memory listedItem = s_listings[nftAddress][tokenId];
         if (msg.value < listedItem.price) {
             revert PriceNotMet(nftAddress, tokenId, listedItem.price);
         }
         s_proceeds[listedItem.seller] += msg.value;
-        // Could just send the money...
-        // https://fravoll.github.io/solidity-patterns/pull_over_push.html
         delete (s_listings[nftAddress][tokenId]);
-        IERC721(nftAddress).safeTransferFrom(
-            listedItem.seller,
-            msg.sender,
-            tokenId
-        );
+        IERC721(nftAddress).safeTransferFrom(listedItem.seller, msg.sender, tokenId);
         emit ItemBought(msg.sender, nftAddress, tokenId, listedItem.price);
     }
 
-    /*
+    /**
      * @notice Method for updating listing
      * @param nftAddress Address of NFT contract
      * @param tokenId Token ID of NFT
@@ -187,7 +150,6 @@ contract NftMarketplace is ReentrancyGuard {
         nonReentrant
         isOwner(nftAddress, tokenId, msg.sender)
     {
-        //We should check the value of `newPrice` and revert if it's below zero (like we also check in `listItem()`)
         if (newPrice <= 0) {
             revert PriceMustBeAboveZero();
         }
@@ -195,7 +157,7 @@ contract NftMarketplace is ReentrancyGuard {
         emit ItemListed(msg.sender, nftAddress, tokenId, newPrice);
     }
 
-    /*
+    /**
      * @notice Method for withdrawing proceeds from sales
      */
     function withdrawProceeds() external {

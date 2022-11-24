@@ -9,7 +9,7 @@ const networkConfig = {
         callbackGasLimit: "500000"
     },
     80001: {
-        name: "matic"
+        name: "polygon_mumbai"
     },
 
     5: {

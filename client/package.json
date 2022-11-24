@@ -9,13 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.1",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.4",
+    "graphql": "^16.6.0",
+    "moralis": "^1.5.11",
     "next": "13.0.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.6.0",
-    "react-reveal": "^1.2.2"
+    "react-moralis": "^1.3.5",
+    "react-reveal": "^1.2.2",
+    "web3uikit": "^0.0.133"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
