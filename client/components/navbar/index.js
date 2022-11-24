@@ -22,7 +22,7 @@ export const links = [
   },
   {
     icon: <MdOutlineSell />,
-    name: "sell NFTs",
+    name: "sell",
     link: "/sell-nfts",
   },
   {

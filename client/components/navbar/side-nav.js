@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
-import { BsPersonCircle } from "react-icons/bs";
 import { MdOutlineLogout } from "react-icons/md";
+import { ConnectButton } from "web3uikit";
 import { links } from ".";
 
 export default function SideNav({ openNav, setOpenNav } = {}) {
@@ -32,10 +32,9 @@ export default function SideNav({ openNav, setOpenNav } = {}) {
               </li>
             ))}
             <li className="mb-4 text-xl text-slate-200 hover:text-slate-300">
-              <button>
-                <MdOutlineLogout className="inline mr-2" />
-                sign out
-              </button>
+              <div className="flex items-center justify-center w-[70%]">
+                <ConnectButton moralisAuth={false} />
+              </div>
             </li>
           </ul>
         </nav>
