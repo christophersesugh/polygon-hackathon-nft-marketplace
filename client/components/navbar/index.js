@@ -1,6 +1,7 @@
 import React from "react";
 import { FaBookmark, FaStar } from "react-icons/fa";
-import { MdOutlineFeaturedPlayList, MdOutlineSell } from "react-icons/md";
+import { GiPriceTag } from "react-icons/gi";
+import { MdOutlineSell } from "react-icons/md";
 import MainNav from "./main-nav";
 import SideNav from "./side-nav";
 
@@ -16,13 +17,13 @@ export default function Navbar() {
 
 export const links = [
   {
-    icon: <MdOutlineSell />,
-    name: "Marketplace",
+    icon: <GiPriceTag />,
+    name: "buy NFTs",
     link: "/market",
   },
   {
     icon: <MdOutlineSell />,
-    name: "sell",
+    name: "sell NFTs",
     link: "/sell-nfts",
   },
   {
