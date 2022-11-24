@@ -15,7 +15,7 @@ export default function MainNav({ setOpenNav }) {
           <Link href="/">
             <button className="focus:outline-none">
               <Image
-                src="/assets/logos/nft-core-white.png"
+                src="/assets/logos/nft-core-white.PNG"
                 width={300}
                 height={300}
                 alt="logo"
