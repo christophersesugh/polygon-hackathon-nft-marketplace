@@ -11,7 +11,7 @@ export default function Features() {
       <SectionTitle
         title="Why Choose Us"
         subtitle="Our Features"
-        titleBody="There are many variations of passages of Lorem Ipsum available."
+        titleBody="Below are the platform core features."
       />
       <div className="flex justify-between gap-8 flex-wrap md:flex-nowrap w-full">
         {features.map((feature, index) => (
