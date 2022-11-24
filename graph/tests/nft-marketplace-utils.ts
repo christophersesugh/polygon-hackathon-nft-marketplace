@@ -2,7 +2,7 @@ import { newMockEvent } from "matchstick-as"
 import { ethereum, Address, BigInt } from "@graphprotocol/graph-ts"
 import {
   ItemBought,
-  ItemCanceled,
+  ItemCancelled,
   ItemListed
 } from "../generated/NftMarketplace/NftMarketplace"
 
@@ -38,32 +38,32 @@ export function createItemBoughtEvent(
   return itemBoughtEvent
 }
 
-export function createItemCanceledEvent(
-  seller: Address,
+export function createItemCancelledEvent(
+  seeller: Address,
   nftAddress: Address,
   tokenId: BigInt
-): ItemCanceled {
-  let itemCanceledEvent = changetype<ItemCanceled>(newMockEvent())
+): ItemCancelled {
+  let itemCancelledEvent = changetype<ItemCancelled>(newMockEvent())
 
-  itemCanceledEvent.parameters = new Array()
+  itemCancelledEvent.parameters = new Array()
 
-  itemCanceledEvent.parameters.push(
-    new ethereum.EventParam("seller", ethereum.Value.fromAddress(seller))
+  itemCancelledEvent.parameters.push(
+    new ethereum.EventParam("seeller", ethereum.Value.fromAddress(seeller))
   )
-  itemCanceledEvent.parameters.push(
+  itemCancelledEvent.parameters.push(
     new ethereum.EventParam(
       "nftAddress",
       ethereum.Value.fromAddress(nftAddress)
     )
   )
-  itemCanceledEvent.parameters.push(
+  itemCancelledEvent.parameters.push(
     new ethereum.EventParam(
       "tokenId",
       ethereum.Value.fromUnsignedBigInt(tokenId)
     )
   )
 
-  return itemCanceledEvent
+  return itemCancelledEvent
 }
 
 export function createItemListedEvent(

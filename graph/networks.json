@@ -1,7 +1,7 @@
 {
-  "mumbai": {
+  "goerli": {
     "NftMarketplace": {
-      "address": "0x81F584Da266DecC373b971e4042954A86CAa49c3"
+      "address": "0x76d7a633f83cb2cff8078c9cf178c1732155267c"
     }
   }
 }

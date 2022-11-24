@@ -44,49 +44,89 @@ export class ActiveItem extends Entity {
     this.set("id", Value.fromBytes(value));
   }
 
-  get buyer(): Bytes {
+  get buyer(): Bytes | null {
     let value = this.get("buyer");
-    return value!.toBytes();
+    if (!value || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toBytes();
+    }
   }
 
-  set buyer(value: Bytes) {
-    this.set("buyer", Value.fromBytes(value));
+  set buyer(value: Bytes | null) {
+    if (!value) {
+      this.unset("buyer");
+    } else {
+      this.set("buyer", Value.fromBytes(<Bytes>value));
+    }
   }
 
-  get seller(): Bytes {
+  get seller(): Bytes | null {
     let value = this.get("seller");
-    return value!.toBytes();
+    if (!value || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toBytes();
+    }
   }
 
-  set seller(value: Bytes) {
-    this.set("seller", Value.fromBytes(value));
+  set seller(value: Bytes | null) {
+    if (!value) {
+      this.unset("seller");
+    } else {
+      this.set("seller", Value.fromBytes(<Bytes>value));
+    }
   }
 
-  get nftAddress(): Bytes {
+  get nftAddress(): Bytes | null {
     let value = this.get("nftAddress");
-    return value!.toBytes();
+    if (!value || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toBytes();
+    }
   }
 
-  set nftAddress(value: Bytes) {
-    this.set("nftAddress", Value.fromBytes(value));
+  set nftAddress(value: Bytes | null) {
+    if (!value) {
+      this.unset("nftAddress");
+    } else {
+      this.set("nftAddress", Value.fromBytes(<Bytes>value));
+    }
   }
 
-  get tokenId(): BigInt {
+  get tokenId(): BigInt | null {
     let value = this.get("tokenId");
-    return value!.toBigInt();
+    if (!value || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toBigInt();
+    }
   }
 
-  set tokenId(value: BigInt) {
-    this.set("tokenId", Value.fromBigInt(value));
+  set tokenId(value: BigInt | null) {
+    if (!value) {
+      this.unset("tokenId");
+    } else {
+      this.set("tokenId", Value.fromBigInt(<BigInt>value));
+    }
   }
 
-  get price(): BigInt {
+  get price(): BigInt | null {
     let value = this.get("price");
-    return value!.toBigInt();
+    if (!value || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toBigInt();
+    }
   }
 
-  set price(value: BigInt) {
-    this.set("price", Value.fromBigInt(value));
+  set price(value: BigInt | null) {
+    if (!value) {
+      this.unset("price");
+    } else {
+      this.set("price", Value.fromBigInt(<BigInt>value));
+    }
   }
 }
 
@@ -187,7 +227,7 @@ export class ItemBought extends Entity {
   }
 }
 
-export class ItemCanceled extends Entity {
+export class ItemCancelled extends Entity {
   constructor(id: Bytes) {
     super();
     this.set("id", Value.fromBytes(id));
@@ -195,19 +235,19 @@ export class ItemCanceled extends Entity {
 
   save(): void {
     let id = this.get("id");
-    assert(id != null, "Cannot save ItemCanceled entity without an ID");
+    assert(id != null, "Cannot save ItemCancelled entity without an ID");
     if (id) {
       assert(
         id.kind == ValueKind.BYTES,
-        `Entities of type ItemCanceled must have an ID of type Bytes but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type ItemCancelled must have an ID of type Bytes but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
-      store.set("ItemCanceled", id.toBytes().toHexString(), this);
+      store.set("ItemCancelled", id.toBytes().toHexString(), this);
     }
   }
 
-  static load(id: Bytes): ItemCanceled | null {
-    return changetype<ItemCanceled | null>(
-      store.get("ItemCanceled", id.toHexString())
+  static load(id: Bytes): ItemCancelled | null {
+    return changetype<ItemCancelled | null>(
+      store.get("ItemCancelled", id.toHexString())
     );
   }
 
@@ -220,13 +260,13 @@ export class ItemCanceled extends Entity {
     this.set("id", Value.fromBytes(value));
   }
 
-  get seller(): Bytes {
-    let value = this.get("seller");
+  get seeller(): Bytes {
+    let value = this.get("seeller");
     return value!.toBytes();
   }
 
-  set seller(value: Bytes) {
-    this.set("seller", Value.fromBytes(value));
+  set seeller(value: Bytes) {
+    this.set("seeller", Value.fromBytes(value));
   }
 
   get nftAddress(): Bytes {
