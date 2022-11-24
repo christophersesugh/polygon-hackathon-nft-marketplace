@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="grid g sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-16 pb-8 items-start">
           <div className="p-4 -mt-24">
             <Image
-              src="/assets/logos/nft-core-white.PNG"
+              src="/nft-core-white.png"
               width={250}
               height={350}
               alt="Logo"
