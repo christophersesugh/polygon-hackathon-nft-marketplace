@@ -7,7 +7,7 @@ import Fade from "react-reveal/Fade";
 export default function Header() {
   return (
     <header
-      className={`bg-[url("../assets/logos/hero.jpeg")] bg-cover bg-no-repeat bg-center bg-indigo-900 bg-origin-content h-screen`}
+      className={`bg-[url("/assets/logos/hero.jpeg")] bg-cover bg-no-repeat bg-center bg-indigo-900 bg-origin-content h-screen`}
     >
       <div className="flex flex-col md:flex-row items-center justify-between lg:p-12 pt-12">
         <Slide left>
