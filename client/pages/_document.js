@@ -4,11 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <link
-          rel="shortcut icon"
-          href="/assets/logos/nft-coin.png"
-          type="image/x-icon"
-        />
+        <link rel="shortcut icon" href="/nft-coin.png" type="image/x-icon" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
