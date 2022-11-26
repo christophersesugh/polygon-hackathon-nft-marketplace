@@ -25,7 +25,10 @@ export default function SideNav({ openNav, setOpenNav } = {}) {
                 className="mb-8 text-xl text-slate-200 hover:text-slate-300"
               >
                 <Link href={link.link}>
-                  <button className="transition capitalize flex items-center">
+                  <button
+                    onClick={() => setOpenNav(false)}
+                    className="transition capitalize flex items-center"
+                  >
                     <span className="mr-2"> {link.icon}</span> {link.name}
                   </button>
                 </Link>

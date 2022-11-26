@@ -1,25 +1,34 @@
 import React from "react";
+import { ErrorBoundary } from "react-error-boundary";
 import { MoralisProvider } from "react-moralis";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import { NotificationProvider } from "web3uikit";
 import Navbar from "./navbar";
 import Footer from "./footer";
+import ErrorFallback from "./error-fallback";
+
+const NEXT_PUBLIC_SUBGRAPH_URL = process.env.NEXT_PUBLIC_SUBGRAPH_URL;
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
-  uri: "",
+  uri: NEXT_PUBLIC_SUBGRAPH_URL,
 });
 
 export default function Layout({ children }) {
   return (
-    <MoralisProvider initializeOnMount={false}>
-      <ApolloProvider client={client}>
-        <NotificationProvider>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-        </NotificationProvider>
-      </ApolloProvider>
-    </MoralisProvider>
+    <ErrorBoundary
+      FallbackComponent={ErrorFallback}
+      onReset={() => window.history.go()}
+    >
+      <MoralisProvider initializeOnMount={false}>
+        <ApolloProvider client={client}>
+          <NotificationProvider>
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+          </NotificationProvider>
+        </ApolloProvider>
+      </MoralisProvider>
+    </ErrorBoundary>
   );
 }

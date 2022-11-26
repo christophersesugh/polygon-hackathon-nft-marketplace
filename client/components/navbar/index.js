@@ -31,9 +31,4 @@ export const links = [
     name: "about",
     link: "/#about",
   },
-  // {
-  //   icon: <MdOutlineFeaturedPlayList />,
-  //   name: "features",
-  //   link: "/#features",
-  // },
 ];
