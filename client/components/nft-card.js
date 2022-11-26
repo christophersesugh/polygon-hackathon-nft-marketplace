@@ -119,6 +119,7 @@ export default function NftCard({ nft, marketplaceAddress }) {
                   src={imageUri}
                   height="200"
                   width="200"
+                  alt={tokenName}
                 />
                 <div className="font-bold">
                   {ethers.utils.formatUnits(price, "ether")} ETH
