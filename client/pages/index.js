@@ -11,7 +11,7 @@ import AppHead from "../components/app-head";
 export default function Home() {
   return (
     <>
-      <AppHead title="NFTCore" />
+      <AppHead title="NFTCore | Home" />
       <Header />
       <About />
       <Features />

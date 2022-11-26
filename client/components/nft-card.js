@@ -6,6 +6,7 @@ import { useWeb3Contract, useMoralis } from "react-moralis";
 import nftMarketplaceAbi from "../constants/NftMarketplace.json";
 import nftAbi from "../constants/BasicNft.json";
 import { truncateString } from "../utils/truncate-string";
+import { handStatus } from "../utils/alert-dispatch-function";
 import UpdatingListingModal from "./update-listing-modal";
 import { NftIndicator } from "./loading-indicators";
 
@@ -66,35 +67,24 @@ export default function NftCard({ nft, marketplaceAddress }) {
   const user = seller === account || seller === undefined;
   const formattedAddress = user ? "You" : truncateString(seller || "", 15);
 
-  const handleBoughtItemError = (error) => {
-    dispatch({
-      type: "error",
-      message: error.message,
-      title: "An Error occured!",
-      position: "topL",
-    });
-  };
-
-  const handleBoughtItemSuccess = () => {
-    dispatch({
-      type: "success",
-      message: "Item bought!",
-      title: "Item Bought",
-      position: "topR",
-    });
-  };
-
   const handleCardClick = () => {
     user
       ? setShowModal(true)
       : buyItem({
-          onError: (error) => handleBoughtItemError(error),
-          onSuccess: () => handleBoughtItemSuccess(),
+          onError: (error) =>
+            handStatus(
+              dispatch,
+              "error",
+              error.message,
+              "An error occured!",
+              "topL"
+            ),
+          onSuccess: () => handStatus(dispatch, "success", "", "Item Bought!"),
         });
   };
 
   return (
-    <article className="flex flex-col justify-center items-center">
+    <article className="flex flex-col justify-center items-center drop-shadow-lg">
       {imageUri ? (
         <>
           <UpdatingListingModal />
