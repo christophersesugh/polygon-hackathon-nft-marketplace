@@ -12,7 +12,7 @@ export default function FAQS() {
       />
       <div className="columns-1 gap-8 md:columns-2 mx-14 sm:mx-8 md:mx-8 ">
         {questions.map((question, index) => (
-          <Accordion question={question} key={index} index={index} />
+          <Accordion question={question} key={question.body} index={index} />
         ))}
       </div>
     </section>
@@ -20,29 +20,44 @@ export default function FAQS() {
 }
 
 const questions = [
-  { title: "How can I mint NFTs?", body: "thing" },
-  { title: "How can I list NFTs?", body: "thing" },
-  { title: "How can I buy NFTs?", body: "thing" },
-  { title: "How can I withdraw my proceeds (funds)?", body: "thing" },
-  { title: "What Crypto wallets are supported?", body: "thing" },
   {
-    title: "Do I need a Crypto account to Mint, List, and Sell NFTs?",
-    body: "thing",
+    title: "How can I mint NFTs?",
+    body: "After connecting your wallet, naviagte to `sell NFTs` page to mint and list your NFTs.",
   },
   {
-    title: "How can I cancel my listed NFTs?",
-    body: "thing",
+    title: "How can I list NFTs?",
+    body: "After minting your NFTs, they are automatically listed.",
+  },
+  {
+    title: "How can I buy NFTs?",
+    body: "After connecting your wallet, navigate to `buy NFTs page` to buy.",
+  },
+  {
+    title: "How can I withdraw my proceeds (funds)?",
+    body: "Naviagte to `sell NFTs`, there you can see your proceeds at the bottom. If any proceeds, you can go ahead and withdraw.",
+  },
+  {
+    title: "What Crypto wallets are supported?",
+    body: "Any crypto wallet is surpoorted.",
+  },
+  {
+    title: "Do I need a Crypto account to Mint, List, and Sell NFTs?",
+    body: "Yes, you do need a crypto account to perform those actions.",
+  },
+  {
+    title: "How can I create a crypto account?",
+    body: "You can create a crypto account using metamask or any crypto wallet of your choice.",
   },
   {
     title: "How can I update my listed NFTs?",
-    body: "thing",
+    body: "Simply click on NFTs owned by you and a modal will pop up for you to update your NFT lisitng.",
   },
   {
     title: "How can I connect my Crypto wallet?",
-    body: "thing",
+    body: "Click on the `connect` button and your wallet will pop up for you to connect.",
   },
   {
     title: "What Crypto currencies can I use to purchase NFTs?",
-    body: "thing",
+    body: "Ethereum and polygon can be used to purchase NFTs.",
   },
 ];

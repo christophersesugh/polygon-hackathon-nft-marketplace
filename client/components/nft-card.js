@@ -84,10 +84,16 @@ export default function NftCard({ nft, marketplaceAddress }) {
   };
 
   return (
-    <article className="flex flex-col justify-center items-center drop-shadow-lg">
-      {imageUri ? (
-        <>
-          <UpdatingListingModal />
+    <>
+      <UpdatingListingModal
+        isVisible={showModal}
+        tokenId={tokenId}
+        marketplaceAddress={marketplaceAddress}
+        nftAddress={nftAddress}
+        onClose={() => setShowModal(false)}
+      />
+      <article className="flex flex-col justify-center items-center drop-shadow-lg">
+        {imageUri ? (
           <Card
             title={tokenName}
             description={tokenDescription}
@@ -117,10 +123,10 @@ export default function NftCard({ nft, marketplaceAddress }) {
               </div>
             </div>
           </Card>
-        </>
-      ) : (
-        <NftIndicator />
-      )}
-    </article>
+        ) : (
+          <NftIndicator />
+        )}
+      </article>
+    </>
   );
 }

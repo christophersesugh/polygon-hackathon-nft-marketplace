@@ -27,7 +27,7 @@ export default function Accordion({ question, index }) {
           {isOpen ? <BiMinus className="text-xl" /> : <BsPlus />}
         </button>
         {isOpen && (
-          <div className="bg-slate-50 p-4 w-full rounded-br-md rounded-bl-md transition-all translate-y-100">
+          <div className="bg-slate-50 p-4 w-full rounded-br-md rounded-bl-md transition-all translate-y-100 text-md">
             <p>{question.body}</p>
           </div>
         )}

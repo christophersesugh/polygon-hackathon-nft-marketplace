@@ -38,9 +38,11 @@ export default function SellNft() {
           </div>
         ) : (
           <>
-            <h1 className="font-bold text-2xl my-4 self-center">
-              Recently Listed Items.
-            </h1>
+            {!isLoading || listedItems ? (
+              <h1 className="font-bold text-2xl my-4 self-center">
+                Recently Listed Items.
+              </h1>
+            ) : null}
             {isLoading || !listedItems ? (
               <MainIndicator />
             ) : error ? (
