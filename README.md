@@ -2,7 +2,7 @@
 
 ### The logo is dedicated to [Polygon](https://polygon.technology)
 
-# NFT Marketplace
+# NFTCore
 
 ## Tech Stack.
 
