@@ -115,7 +115,6 @@ export default function SellNfts() {
             {
               name: "NFT Address",
               type: "text",
-              inputWidth: "50%",
               value: "",
               key: "nftAddress",
             },
