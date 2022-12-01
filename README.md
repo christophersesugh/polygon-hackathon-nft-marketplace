@@ -4,7 +4,7 @@
 
 # NFT Marketplace
 
-### Tech Stack.
+## Tech Stack.
 
 - Reactjs: For building user interfaces for web applications.
 - Nextjs: A framework built on top of reactjs that simplifies things like routing, search engine optimization, and server side rendering in reactjs.
@@ -12,11 +12,11 @@
 - Ethereum: Is a decentralized blockchain-based software with smart contract functionalities supporting Ether as a cryptocurrency.
 - Solidity: A high-level, object-oriented language for implementing smart contracts.
 
-### Use of product.
+## Use of product.
 
 This is simply an NFT marketplace where you can mint, list, sell, or buy NFTs.
 
-### Project description.
+## Project description.
 
 This project is hosted both on top of Goerli testnet and polygon testnet using the Ethereum network.
 
