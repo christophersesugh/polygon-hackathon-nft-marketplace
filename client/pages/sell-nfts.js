@@ -43,13 +43,12 @@ export default function SellNfts() {
           "error",
           error.message,
           "An error occured!",
-          "topL"
+          "bottomL"
         ),
     });
   }
 
   async function handleApproveSuccess(tx, nftAddress, tokenId, price) {
-    console.log("Ok! Now time to list");
     await tx.wait();
     const listOptions = {
       abi: marketplaceAbi,
@@ -72,7 +71,7 @@ export default function SellNfts() {
           "error",
           error.message,
           "An error occured!",
-          "topL"
+          "bottomL"
         ),
     });
   }
@@ -156,7 +155,7 @@ export default function SellNfts() {
                       "error",
                       error.message,
                       "An error occured!",
-                      "topL"
+                      "bottomL"
                     ),
                   onSuccess: () =>
                     handStatus(
