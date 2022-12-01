@@ -1,4 +1,4 @@
-![NFTCore](https://nftcore.vercel.app/nft-logo.png)
+![NFTCore](https://nftcore.vercel.app/nft-core-white.png)
 
 ### The logo is dedicated to [Polygon](https://polygon.technology)
 
