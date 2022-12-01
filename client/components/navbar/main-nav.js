@@ -44,9 +44,9 @@ export default function MainNav({ setOpenNav }) {
         </ul>
 
         <div className="text-bold capitalize">
-          {/* <div className="hidden md:block rounded-3xl bg-slate-50 text-blue-700 p-2"> */}
-          <ConnectButton moralisAuth={false} />
-          {/* </div> */}
+          <div className="hidden md:block">
+            <ConnectButton moralisAuth={false} />
+          </div>
 
           <button className="md:hidden" onClick={() => setOpenNav(true)}>
             <FaBars className="text-2xl" />

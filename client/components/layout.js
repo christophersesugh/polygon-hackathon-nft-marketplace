@@ -22,11 +22,11 @@ export default function Layout({ children }) {
     >
       <MoralisProvider initializeOnMount={false}>
         <ApolloProvider client={client}>
+          <Navbar />
           <NotificationProvider>
-            <Navbar />
             <main>{children}</main>
-            <Footer />
           </NotificationProvider>
+          <Footer />
         </ApolloProvider>
       </MoralisProvider>
     </ErrorBoundary>
