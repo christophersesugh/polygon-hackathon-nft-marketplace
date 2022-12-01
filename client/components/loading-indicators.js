@@ -7,6 +7,7 @@ function MainIndicator() {
         src="/nft-logo.png"
         width={200}
         height={200}
+        alt="loading..."
         className="animate-spin"
       />
     </div>
