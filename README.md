@@ -1,4 +1,4 @@
-![NFTCore](https://nftcore.vercel.app/nft-core-white.png)
+![NFTCore](https://nftcore.vercel.app/nft-logo.png)
 
 ### The logo is dedicated to [Polygon](https://polygon.technology)
 
@@ -20,8 +20,8 @@ This is simply an NFT marketplace where you can mint, list, sell, or buy NFTs.
 
 This project is hosted both on top of Goerli testnet and polygon testnet using the Ethereum network.
 
-The contract's polygon testnet address: `0x81F584Da266DecC373b971e4042954A86CAa49c3`
-The Goerli testnet address: `0x76d7A633F83cB2Cff8078C9cF178c1732155267c`
+- The contract's polygon testnet address: `0x81F584Da266DecC373b971e4042954A86CAa49c3`
+- The Goerli testnet address: `0x76d7A633F83cB2Cff8078C9cF178c1732155267c`
 
 The aim of the project is to build a trust-minimized, decentralized NFT marketplace.
 
