@@ -25,6 +25,8 @@ This project is hosted both on top of Goerli testnet and polygon testnet using t
 
 The aim of the project is to build a trust-minimized, decentralized NFT marketplace.
 
+### Note: currently, the graph doesn't support polygon network, so I am using the goerli testnet to power the frontend but the contract is also deployed on the polygon network and will immediately switch to the polygon network once the graph begin indexing polygon subgraphs.
+
 - Live URL: [NFTCore.com](https://nftcore.vercel.app)
 - The Graph URL: [PH-NFTMarketplace](https://thegraph.com/studio/subgraph/ph-nftmarketplace/)
 - Source code URL: [PH-NFTMarketplace](https://github.com/christophersesugh/polygon-hackathon-nft-marketplace)
